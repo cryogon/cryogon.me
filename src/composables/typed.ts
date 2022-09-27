@@ -11,7 +11,7 @@ export function useTypedJs(target: MaybeElementRef, options: TypedOptions) {
   const reset = () => typed && typed.reset();
 
   watch(
-    target,
+    target as Object,
     () => {
       const el = unrefElement(target);
       if (!el) return;
