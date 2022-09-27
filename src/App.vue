@@ -10,5 +10,3 @@ import NavBar from "./components/NavBar.vue";
 
   <RouterView />
 </template>
-
-<style lang="scss" scoped></style>

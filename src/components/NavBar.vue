@@ -8,23 +8,21 @@ const toggleDark = useToggle(isDark);
     <h2 id="logo">cryogon</h2>
     <ul class="navItemContainer">
       <li class="navItem">
-        <a>
-          <fa-icon icon="home" />
-        </a>
+        <router-link to="/projects"> Projects </router-link>
       </li>
       <li class="navItem">
         <a href="https://github.com/cryogon">
-          <fa-icon icon="fa-brands fa-github" />
+          <fa-icon :icon="['fab', 'github']" />
         </a>
       </li>
       <li class="navItem">
         <a href="https://twitter.com/Jatin69123235">
-          <fa-icon icon="fa-brands fa-twitter" />
+          <fa-icon :icon="['fab', 'twitter']" />
         </a>
       </li>
       <li class="navItem">
         <a @click="toggleDark()" class="toggleContainer">
-          <fa-icon class="icon left" icon="sun" v-if="isDark" />
+          <fa-icon class="icon left" icon="sun" v-if="!isDark" />
           <fa-icon class="icon right" icon="moon" v-else />
         </a>
       </li>
@@ -37,6 +35,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 95vw;
+  margin-block-end: 0.4rem;
   .navItemContainer {
     display: flex;
     justify-content: space-between;
