@@ -51,8 +51,9 @@ useTypedJs(target, {
   grid-template-columns: 1fr 1fr;
   flex-wrap: wrap;
   #name {
-    font-size: 64px;
-    padding: 0.5rem 1rem;
+    font-size: calc(4vw + 10px);
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
     width: 50vw;
   }
   .intro {
