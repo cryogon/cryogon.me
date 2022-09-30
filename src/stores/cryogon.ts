@@ -1,12 +1,26 @@
-import { ref, computed } from "vue";
+// import { ref, computed } from "vue";
 import { defineStore } from "pinia";
-
-export const useCryogonStore = defineStore("counter", () => {
-  const count = ref(0);
-  const doubleCount = computed(() => count.value * 2);
-  function increment() {
-    count.value++;
-  }
-
-  return { count, doubleCount, increment };
+import type { myProjectType } from "@/types";
+export const useCryogonStore = defineStore({
+  id: "cryogon",
+  state: () => ({
+    projects: [
+      {
+        appLogo: "https://project-geo.netlify.app/img/logo.b94134a9.svg",
+        appName: "Project-Geo",
+        description: "Map where you can draw your path and use them later",
+        githubLink: "https://github.com/cryogon/Project-Geo",
+        liveSiteLink: "project-geo.netlify.app",
+      },
+      {
+        appLogo: "logo.svg",
+        appName: "Demohub",
+        description: "Project I used to test UI design on",
+        githubLink: "https://github.com/cryogon/demohub",
+        liveSiteLink: "project-demohub.netify.app",
+      },
+    ] as myProjectType[],
+  }),
+  getters: {},
+  actions: {},
 });

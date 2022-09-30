@@ -10,7 +10,14 @@ useTypedJs(target, {
   backDelay: 1500,
   showCursor: false,
   loop: true,
-  strings: ["Jatin Thakur", "जतिन ठाकुर", "ジャティン・タクール", "જતીન ઠાકુર"],
+  strings: [
+    "What's Up",
+    "क्या चल रहा है",
+    "調子はどう",
+    "ਕੀ ਹੋ ਰਿਹਾ ਹੈ",
+    "뭐야",
+    "quoi de neuf",
+  ],
 });
 </script>
 <template>

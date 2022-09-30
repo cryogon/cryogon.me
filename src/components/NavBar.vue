@@ -1,7 +1,13 @@
 <script lang="ts" setup>
-import { useDark, useToggle } from "@vueuse/core";
+import { ref } from "vue";
+import { useDark, useToggle, useNow, useDateFormat } from "@vueuse/core";
+import { computed } from "vue";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+const showSeconds = ref(true);
+const dateFormat = computed(() => (showSeconds.value ? "hh:mm:ss" : "hh:mm"));
+const time = useDateFormat(useNow(), dateFormat);
+const toggleDateFormat = useToggle(showSeconds);
 </script>
 <template>
   <nav>
@@ -26,6 +32,12 @@ const toggleDark = useToggle(isDark);
           <fa-icon class="icon right" icon="moon" v-else />
         </a>
       </li>
+      <li class="navItem flex">
+        <a @click="toggleDateFormat()">
+          <fa-icon icon="clock" />
+          <span>{{ time }}</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </template>
@@ -36,10 +48,17 @@ nav {
   align-items: center;
   width: 95vw;
   margin-block-end: 0.4rem;
+  .flex {
+    display: flex;
+    span {
+      margin-inline-start: 0.4rem;
+    }
+  }
   .navItemContainer {
     display: flex;
     justify-content: space-between;
-    width: 20vw;
+    width: 30em;
+    list-style-type: none;
     .navItem {
       list-style-type: none;
       padding: 0.5rem;
