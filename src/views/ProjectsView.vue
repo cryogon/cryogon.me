@@ -25,6 +25,9 @@ const { projects } = storeToRefs(useCryogonStore());
   display: grid;
   place-items: center;
   padding-block-start: 4rem;
+  & + h1 {
+    margin-block-end: 1rem;
+  }
   .projects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

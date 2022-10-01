@@ -12,7 +12,7 @@ import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 import App from "./App.vue";
 import router from "./router";
 
-import "./assets/main.css";
+import "./assets/main.scss";
 library.add(faSun, faMoon, faTwitter, faGithub, faHome, faClock);
 const app = createApp(App);
 app.component("fa-icon", FontAwesomeIcon);

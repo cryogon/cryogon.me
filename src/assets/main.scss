@@ -1,25 +1,23 @@
 @import "./base.scss";
 
 
-html:is(.dark){
-  color-scheme: dark;
-}
-html:not(.dark){
+html{
   color-scheme: light;
+  &:is(.dark){
+    color-scheme: dark;
+  }
+  #app {
+    margin: 0 auto;
+    font-weight: normal;
+  }
+  a{
+    color:rebeccapurple;
+    text-decoration: none;
+    transition: 0.4s;
+  }
 }
 
-#app {
-  margin: 0 auto;
-  /* padding: 2rem; */
-  font-weight: normal;
-}
 
-a,
-.green {
-  color:rebeccapurple;
-  text-decoration: none;
-  transition: 0.4s;
-}
 
 @media (hover: hover) {
   a:hover {

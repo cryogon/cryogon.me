@@ -19,6 +19,14 @@ export const useCryogonStore = defineStore({
         githubLink: "https://github.com/cryogon/demohub",
         liveSiteLink: "project-demohub.netify.app",
       },
+      {
+        appLogo:
+          "https://logos-world.net/wp-content/uploads/2020/09/Spotify-Symbol.png",
+        appName: "Spotify-Clone",
+        description: "My first ever Javascript Project",
+        githubLink: "https://github.com/cryogon/SpotifyClone",
+        liveSiteLink: "project-demohub.netify.app",
+      },
     ] as myProjectType[],
   }),
   getters: {},
