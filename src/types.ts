@@ -5,3 +5,8 @@ export interface myProjectType {
   githubLink: string;
   liveSiteLink: string;
 }
+
+export interface osuProfileType {
+  isFetching: boolean;
+  data: unknown | string;
+}

@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useDark, useToggle, useNow, useDateFormat } from "@vueuse/core";
 import { computed } from "vue";
+import router from "@/router";
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 const showSeconds = ref(true);
@@ -11,7 +12,7 @@ const toggleDateFormat = useToggle(showSeconds);
 </script>
 <template>
   <nav>
-    <h2 id="logo">cryogon</h2>
+    <h2 id="logo" @click="router.push('/')">cryogon</h2>
     <ul class="navItemContainer">
       <li class="navItem">
         <router-link to="/projects"> Projects </router-link>
@@ -48,6 +49,9 @@ nav {
   align-items: center;
   width: 95vw;
   margin-block-end: 0.4rem;
+  #logo {
+    cursor: pointer;
+  }
   .flex {
     display: flex;
     span {

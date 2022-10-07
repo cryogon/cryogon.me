@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import OsuProfileCard from "../components/OsuProfileCard.vue";
+</script>
 <template>
   <main>
-    <h1>Secret Page Not Out Yet</h1>
+    <Suspense>
+      <OsuProfileCard />
+    </Suspense>
   </main>
 </template>
