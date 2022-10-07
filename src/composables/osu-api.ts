@@ -14,7 +14,6 @@ export async function getOsuToken(recivedcode: string) {
   };
   const token = await fetch(TOKEN_URL, {
     method: "POST",
-    mode: "no-cors",
     body: JSON.stringify(data),
     headers: {
       Accept: "application/json",
