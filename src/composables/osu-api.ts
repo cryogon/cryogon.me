@@ -61,7 +61,6 @@ export async function getBestScoresOfPerson(id: string, access_token: string) {
   return await useFetch(`${API_URL}/users/${id}/scores/best?${params}`, {
     beforeFetch({ options }) {
       options.headers = headers;
-      options.mode = "no-cors";
       options.method = "GET";
       return {
         options,
