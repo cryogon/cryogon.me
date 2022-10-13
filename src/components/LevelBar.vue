@@ -13,7 +13,7 @@ onMounted(() => {
       ],
     },
     options: {
-      cutout: 70,
+      // cutout: 70,
       aspectRatio: 1,
       layout: {
         autoPadding: true,
