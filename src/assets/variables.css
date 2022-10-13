@@ -1,0 +1,16 @@
+:root {
+  --section-gap: 160px;
+  --light-color-text: rgb(60, 60, 60);
+  --light-color-background: #ffffff;
+  --dark-color-background: #181818;
+  --dark-color-text: #ffffff;
+  --text-color: var(--light-color-text);
+  --background-color: var(--light-color-background);
+}
+
+:root{
+  @media (prefers-color-scheme:dark){
+    --text-color: var(--dark-color-text);
+    --background-color: var(--dark-color-background);
+  }
+}
