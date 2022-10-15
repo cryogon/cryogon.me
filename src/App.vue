@@ -24,5 +24,6 @@ html {
     background-color: #57cc99;
     border-radius: 2rem;
   }
+  overflow-x: hidden;
 }
 </style>

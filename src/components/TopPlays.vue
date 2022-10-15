@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import axios from "axios";
-const scores = await axios.get(
-  "https://cryogon-server.vercel.app/api/bestscores/24534724/osu?limit=100"
-);
+import { useCryogonStore } from "@/stores/cryogon";
+const store = useCryogonStore();
+const scores = await store.bestscores;
 function openSongUrl(url: string) {
   window.location.assign(url);
 }
 </script>
+
 <template>
   <div class="scoresContainer">
     <div

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import axios from "axios";
 import ScoreChart from "./ScoreChart.vue";
 import LevelBar from "./LevelBar.vue";
-const user = await axios.get(
-  "https://cryogon-server.vercel.app/api/user/24534724/osu"
-);
+import { useCryogonStore } from "@/stores/cryogon";
+const store = useCryogonStore();
+const user = await store.user;
 const stats = user.data.statistics;
 </script>
 <template>

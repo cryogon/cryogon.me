@@ -19,7 +19,7 @@ function toggleNavBar() {
   <nav>
     <h2 id="logo" @click="router.push('/')">cryogon</h2>
     <fa-icon :icon="icon" class="mobileBar" @click="toggleNavBar" />
-    <ul class="navItemContainer" :class="{ mobileNav: isNavBarActive }">
+    <ul class="navItemContainer" :aria-expanded="isNavBarActive">
       <li class="navItem">
         <router-link to="/projects"> Projects </router-link>
       </li>
@@ -33,6 +33,12 @@ function toggleNavBar() {
         <a href="https://twitter.com/Jatin69123235">
           <fa-icon :icon="['fab', 'twitter']" />
           <span v-show="isNavBarActive"> Twitter</span>
+        </a>
+      </li>
+      <li class="navItem">
+        <a href="https://www.instagram.com/cryogonjs/">
+          <fa-icon :icon="['fab', 'instagram']" />
+          <span v-show="isNavBarActive"> Instagram</span>
         </a>
       </li>
       <li class="navItem">
@@ -75,7 +81,7 @@ nav {
   .navItemContainer {
     display: flex;
     justify-content: space-between;
-    width: 30em;
+    width: 35em;
     list-style-type: none;
     .navItem {
       list-style-type: none;
@@ -119,27 +125,51 @@ nav {
       }
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .mobileBar {
       display: block;
-      position: absolute;
+      position: fixed;
       z-index: 12;
-      right: 0;
+      right: 1rem;
+      cursor: pointer;
+      scale: 1.7;
     }
     .navItemContainer {
-      display: none;
-    }
-    .mobileNav {
-      display: flex;
       z-index: 11;
       flex-direction: column-reverse;
-      position: absolute;
-      width: 10rem;
+      position: fixed;
+      width: 20rem;
+      font-size: 20px;
+      align-items: center;
       background-color: var(--background-color);
       top: 0;
-      right: 0;
+      right: -20rem;
       height: 100vh;
       justify-content: center;
+
+      &[aria-expanded="false"] {
+        animation: slide-out ease-out 0.2s;
+        @keyframes slide-out {
+          from {
+            right: 0rem;
+          }
+          to {
+            right: -20rem;
+          }
+        }
+      }
+      &[aria-expanded="true"] {
+        right: 0;
+        animation: slide-in linear 0.2s;
+        @keyframes slide-in {
+          from {
+            right: -10rem;
+          }
+          to {
+            right: 0rem;
+          }
+        }
+      }
     }
   }
 }

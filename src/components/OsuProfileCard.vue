@@ -1,16 +1,21 @@
 <script setup lang="ts">
-import axios from "axios";
-const user = await axios.get(
-  "https://cryogon-server.vercel.app/api/user/24534724/osu"
-);
+import { useCryogonStore } from "@/stores/cryogon";
+const store = useCryogonStore();
+const user = await store.user;
 const userImg = user?.data.avatar_url;
 </script>
-
 <template>
   <div class="osuProfileCard">
     <img v-if="user" :src="userImg" alt="user" class="userAvatar" />
     <div class="userDetail">
-      <span class="username">{{ user.data.username }}</span>
+      <span
+        class="username"
+        :style="{
+          '--countryFlag': `url('https://countryflagsapi.com/svg/${user.data.country_code}')`,
+        }"
+        >{{ user.data.username }}
+        <span class="country_hover">{{ user.data.location }}</span>
+      </span>
       <span class="GlobalRanking ranking"
         ><span>Global Ranking</span>
         <span class="rank">{{ user.data.statistics.global_rank }}</span>
@@ -42,10 +47,35 @@ const userImg = user?.data.avatar_url;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 4rem 1fr;
+    position: relative;
     .username {
       font-size: 24px;
       place-self: center left;
       grid-column: 1 / span 2;
+      &::after {
+        content: "";
+        background: var(--countryFlag);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top left;
+        width: 2rem;
+        height: 100%;
+        position: absolute;
+        top: 10px;
+        margin-inline-start: 1rem;
+      }
+      .country_hover {
+        display: none;
+      }
+      &:hover .country_hover {
+        display: block;
+        position: absolute;
+        background-color: #000;
+        font-size: 14px;
+        padding-inline: 0.2rem;
+        top: -1rem;
+        left: 8.3rem;
+      }
     }
     .ranking {
       display: flex;

@@ -1,6 +1,8 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import type { myProjectType } from "@/types";
+import axios from "axios";
+
 export const useCryogonStore = defineStore({
   id: "cryogon",
   state: () => ({
@@ -28,6 +30,10 @@ export const useCryogonStore = defineStore({
         liveSiteLink: "project-demohub.netify.app",
       },
     ] as myProjectType[],
+    user: axios.get("https://cryogon-server.vercel.app/api/user/24534724/osu"),
+    bestscores: axios.get(
+      "https://cryogon-server.vercel.app/api/bestscores/24534724/osu?limit=100"
+    ),
   }),
   getters: {},
   actions: {},

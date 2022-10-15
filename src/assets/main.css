@@ -5,7 +5,7 @@
   font-weight: normal;
 }
 a{
-  color:rebeccapurple;
+  color:var(--link-color);
   text-decoration: none;
   transition: 0.4s;
 }
