@@ -22,15 +22,15 @@ const { projects } = storeToRefs(useCryogonStore());
 
 <style lang="scss" scoped>
 .projectsContainer {
-  display: grid;
-  place-items: center;
-  padding-block-start: 4rem;
-  & + h1 {
-    margin-block-end: 1rem;
-  }
+  margin-block-start: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .projects {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 100%;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 23rem);
   }
 }
 </style>

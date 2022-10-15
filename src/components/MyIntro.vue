@@ -56,9 +56,9 @@ useTypedJs(target, {
 .introContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  flex-wrap: wrap;
+
   #name {
-    font-size: calc(4vw + 10px);
+    font-size: clamp(60px, 64px, 70px);
     padding-block: 0.5rem;
     padding-inline: 1rem;
     width: 50vw;
@@ -68,10 +68,25 @@ useTypedJs(target, {
     padding-inline-start: 0.4rem;
     grid-column: 2 / 3;
     min-height: 1rem;
-    max-width: 40vw;
+    width: 40vw;
     p {
       font-weight: 500;
       margin-block: 0.3rem;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 0;
+    grid-template-rows: 10rem 1fr;
+    #name {
+      width: 100vw;
+      height: 5rem;
+    }
+    .intro {
+      border-inline: none;
+      border-block-start: 2px solid;
+      padding-block-start: 1rem;
+      width: 95vw;
+      grid-row: 2/3;
     }
   }
 }

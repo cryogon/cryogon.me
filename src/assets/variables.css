@@ -1,0 +1,19 @@
+html {
+  --section-gap: 160px;
+  --light-color-text: rgb(60, 60, 60);
+  --light-color-background: #ffffff;
+  --dark-color-background: #181818;
+  --dark-color-text: #ffffff;
+  --text-color: var(--light-color-text);
+  --background-color: var(--light-color-background);
+  --link-color:rebeccapurple;
+  --osu-card-background-color:#22577a;
+  --osu-card-shadow-color:#38a3a5;
+}
+html:is(.dark){
+  --text-color: var(--dark-color-text);
+  --background-color: var(--dark-color-background);
+  --link-color:rgb(162, 69, 255);
+}
+  
+

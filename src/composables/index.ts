@@ -1,2 +1,2 @@
 export * from "./typed";
-export * from "./osu-api";
+export * from "./chart";

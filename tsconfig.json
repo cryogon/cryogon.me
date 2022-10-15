@@ -5,7 +5,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "lib": ["ES2017","ES2017.Intl","ES2017.Object","ES2017.SharedMemory","ES2017.String","ES2017.TypedArrays","DOM"],
   },
 
   "references": [
