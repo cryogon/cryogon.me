@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useCryogonStore } from "@/stores/cryogon";
 const store = useCryogonStore();
-const user = await store.user;
+const user = await store.userData;
 const userImg = user?.data.avatar_url;
 </script>
 <template>
@@ -36,9 +36,9 @@ const userImg = user?.data.avatar_url;
   display: grid;
   grid-template-columns: 11rem 1fr;
   padding: 10px;
-  background-color: #22577a;
+  background-color: var(--osu-card-background-color);
   color: white;
-  box-shadow: 0 0 1rem #38a3a5;
+  box-shadow: 0 0 1rem var(--osu-card-shadow-color);
   .userAvatar {
     width: 10rem;
     border-radius: 2rem;
@@ -55,6 +55,7 @@ const userImg = user?.data.avatar_url;
       &::after {
         content: "";
         background: var(--countryFlag);
+        border-radius: 4px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: top left;

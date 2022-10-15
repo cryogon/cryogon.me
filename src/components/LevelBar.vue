@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useCryogonStore } from "@/stores/cryogon";
 const store = useCryogonStore();
-const level = (await store.user).data.statistics.level.current;
+const level = (await store.userData).data.statistics.level.current;
 </script>
 <template>
   <div class="levelContainer">

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import ScoreChart from "./ScoreChart.vue";
 import LevelBar from "./LevelBar.vue";
 import { useCryogonStore } from "@/stores/cryogon";
 const store = useCryogonStore();
-const user = await store.user;
+const user = await store.userData;
 const stats = user.data.statistics;
 </script>
 <template>
   <aside class="stats">
+    <h2 class="heading">Player Stats</h2>
     <LevelBar class="levelBar" />
     <div class="userInfo">
       <span class="userLevel">Level: {{ stats.level.current }} </span>
@@ -25,27 +25,32 @@ const stats = user.data.statistics;
       <span class="totalHits">Total Hits: {{ stats.total_hits }}</span>
       <span class="MaxCombo">Max Combo: {{ stats.maximum_combo }}</span>
     </div>
-    <ScoreChart />
   </aside>
 </template>
 <style lang="scss" scoped>
 .stats {
   width: 30rem;
-  height: 26rem;
+  height: 20rem;
   border-radius: 2rem;
   font-size: 16px;
-  background: #22577a;
+  background: var(--osu-card-background-color);
   color: white;
-  box-shadow: 0 0 1rem #38a3a5;
-  padding: 1.5rem 1rem;
+  box-shadow: 0 0 1rem var(--osu-card-shadow-color);
+  padding: 0.4rem 1rem;
   display: grid;
   grid-template-columns: 14rem 1fr;
+  grid-template-rows: 3rem 1fr;
+  .heading {
+    justify-self: center;
+    grid-column: 1 / span 2;
+  }
   .userInfo {
     display: flex;
     flex-direction: column;
   }
   .levelBar {
-    place-self: center;
+    justify-content: center;
+    margin-block: 4rem auto;
   }
 }
 </style>

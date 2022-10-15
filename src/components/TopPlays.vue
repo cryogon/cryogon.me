@@ -36,9 +36,9 @@ function openSongUrl(url: string) {
   width: 60rem;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: #22577a;
+  background-color: var(--osu-card-background-color);
   color: white;
-  box-shadow: 0 0 1rem #38a3a5;
+  box-shadow: 0 0 1rem var(--osu-card-shadow-color);
   border-radius: 1rem;
   padding: 10px;
 
@@ -48,7 +48,7 @@ function openSongUrl(url: string) {
   }
   &::-webkit-scrollbar-track {
     border-radius: 1rem;
-    background-color: #325d7a;
+    background-color: var(--osu-card-background-color);
   }
   &::-webkit-scrollbar-thumb {
     background-color: #57cc99;
@@ -63,7 +63,7 @@ function openSongUrl(url: string) {
     align-items: center;
     &:hover {
       cursor: pointer;
-      background-color: #325d7a;
+      background-color: var(--osu-card-background-color);
     }
     .rank {
       font-size: 22px;

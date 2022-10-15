@@ -3,7 +3,7 @@ import { useChart } from "@/composables/chart";
 import { onMounted } from "vue";
 import { useCryogonStore } from "@/stores/cryogon";
 const store = useCryogonStore();
-const user = await store.user;
+const user = await store.userData;
 const grades = user.data.statistics.grade_counts;
 onMounted(() => {
   let delayed = false;

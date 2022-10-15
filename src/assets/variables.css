@@ -7,6 +7,8 @@ html {
   --text-color: var(--light-color-text);
   --background-color: var(--light-color-background);
   --link-color:rebeccapurple;
+  --osu-card-background-color:#22577a;
+  --osu-card-shadow-color:#38a3a5;
 }
 html:is(.dark){
   --text-color: var(--dark-color-text);
