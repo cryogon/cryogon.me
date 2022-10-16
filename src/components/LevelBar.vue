@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { useCryogonStore } from "@/stores/cryogon";
 const store = useCryogonStore();
-const level = (await store.userData).data.statistics.level.current;
+const level = (await store.userData).data.statistics.level;
+const cssVariables = {
+  "--osu-level-progress": level.progress + "%",
+  "--osu-level-progress-string": `"${level.progress}%"`,
+};
 </script>
 <template>
-  <div class="levelContainer">
+  <div class="levelContainer" :style="cssVariables">
     <svg
       width="118"
       height="111"
@@ -32,7 +36,7 @@ const level = (await store.userData).data.statistics.level.current;
         </linearGradient>
       </defs>
     </svg>
-    <span class="level">{{ level }}</span>
+    <span class="level">{{ level.current }}</span>
   </div>
 </template>
 <style scoped lang="scss">
@@ -40,6 +44,21 @@ const level = (await store.userData).data.statistics.level.current;
   display: flex;
   justify-content: center;
   position: relative;
+  border-block-end: 4px solid;
+  border-image-source: linear-gradient(
+    90deg,
+    var(--osu-level-progress-current-color) var(--osu-level-progress),
+    var(--osu-level-progress-remaining-color) var(--osu-level-progress)
+  );
+  border-image-slice: 1;
+  padding-bottom: 3rem;
+  &::after {
+    content: var(--osu-level-progress-string);
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    // background-color: red;
+  }
   .osuLevel {
     scale: 1.6;
   }

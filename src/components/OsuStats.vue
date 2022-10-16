@@ -10,7 +10,6 @@ const stats = user.data.statistics;
     <h2 class="heading">Player Stats</h2>
     <LevelBar class="levelBar" />
     <div class="userInfo">
-      <span class="userLevel">Level: {{ stats.level.current }} </span>
       <span class="rawPP">Raw pp: {{ stats.pp }}</span>
       <span class="rankedScore">Ranked Score: {{ stats.ranked_score }}</span>
       <span class="totalScore">Total Score: {{ stats.total_score }}</span>

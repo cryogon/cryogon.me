@@ -57,23 +57,26 @@ main {
     margin-block-start: -1rem;
     grid-column: 2/3;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     grid-template-columns: 0;
     .profile {
       grid-row: 1/2;
     }
+    .ranking {
+      grid-row: 2/3;
+    }
+    .stats {
+      grid-row: 3/4;
+    }
     .topPlays {
-      grid-row: 3/5;
+      grid-row: 5/6;
       grid-column: 0;
       margin-top: 2rem;
       width: 100vw;
       height: 25rem;
     }
-    .stats {
-      grid-row: 2/3;
-    }
     .playCount {
-      grid-row: 5/6;
+      grid-row: 6/7;
       margin-top: 3rem;
     }
   }

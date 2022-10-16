@@ -9,6 +9,8 @@ html {
   --link-color:rebeccapurple;
   --osu-card-background-color:#22577a;
   --osu-card-shadow-color:#38a3a5;
+  --osu-level-progress-remaining-color:#183c54;
+  --osu-level-progress-current-color:#38a3a5;
 }
 html:is(.dark){
   --text-color: var(--dark-color-text);

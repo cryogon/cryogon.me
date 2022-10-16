@@ -6,7 +6,6 @@ const recent = await axios.get(
 );
 const limit = ref(5);
 const limitActivies = computed(() => recent.data.slice(0, limit.value));
-console.log(limitActivies);
 </script>
 <template>
   <ul class="recentContainer">
