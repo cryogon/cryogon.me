@@ -9,6 +9,7 @@ function openSongUrl(url: string) {
 
 <template>
   <div class="scoresContainer">
+    <h2>Top Plays</h2>
     <div
       class="scoreCard"
       v-for="score in scores.data"
@@ -41,7 +42,9 @@ function openSongUrl(url: string) {
   box-shadow: 0 0 1rem var(--osu-card-shadow-color);
   border-radius: 1rem;
   padding: 10px;
-
+  h2 {
+    text-align: center;
+  }
   &::-webkit-scrollbar {
     width: 10px;
     display: none;

@@ -61,23 +61,27 @@ main {
     grid-template-columns: 0;
     .profile {
       grid-row: 1/2;
+      width: 97vw;
     }
     .ranking {
       grid-row: 2/3;
+      width: 97vw;
     }
     .stats {
       grid-row: 3/4;
+      width: 97vw;
     }
     .topPlays {
       grid-row: 5/6;
       grid-column: 0;
       margin-top: 2rem;
-      width: 100vw;
+      width: 97vw;
       height: 25rem;
     }
     .playCount {
       grid-row: 6/7;
       margin-top: 3rem;
+      width: 97vw;
     }
   }
 }
