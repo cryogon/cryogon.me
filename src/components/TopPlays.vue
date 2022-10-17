@@ -63,7 +63,7 @@ function openSongUrl(url: string) {
     align-items: center;
     &:hover {
       cursor: pointer;
-      background-color: var(--osu-card-background-color);
+      background-color: var(--osu-card-background-hover-color);
     }
     .rank {
       font-size: 22px;
