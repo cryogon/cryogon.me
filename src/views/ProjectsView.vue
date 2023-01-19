@@ -26,11 +26,13 @@ const { projects } = storeToRefs(useCryogonStore());
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 90rem;
   .projects {
     display: grid;
     max-width: 100%;
+    row-gap: 1rem;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, 23rem);
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
   }
 }
 </style>

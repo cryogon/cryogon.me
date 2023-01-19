@@ -19,11 +19,6 @@ const router = createRouter({
       name: "osu",
       component: () => import("@/views/OsuView.vue"),
     },
-    {
-      path: "/3d",
-      name: "3d",
-      component: () => import("@/views/3DVer.vue"),
-    },
   ],
 });
 

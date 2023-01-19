@@ -28,7 +28,15 @@ export const useCryogonStore = defineStore({
         appName: "Spotify-Clone",
         description: "My first ever Javascript Project",
         githubLink: "https://github.com/cryogon/SpotifyClone",
-        liveSiteLink: "project-demohub.netify.app",
+        liveSiteLink: "",
+      },
+      {
+        appLogo: "/pripo.png",
+        appName: "Pripo",
+        description:
+          "A platform where you can post anything you want anonymously",
+        githubLink: "https://github.com/cryogon/pripo",
+        liveSiteLink: "pripo.netify.app",
       },
     ] as myProjectType[],
     userData: axios.get(
